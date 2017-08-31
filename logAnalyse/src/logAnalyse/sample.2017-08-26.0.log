@@ -1,9 +1,0 @@
-2012-12-16 05:08:37,905 [Thread-1] INFO  com.submit.SubmitService - Wait time 500
-
-2012-12-16 05:08:38,444 [Thread-1] INFO  com.submit.SubmitService - NO OF  RECORDS TILL NOW 3755    TOTAL TIME -- << 539
-
-2012-12-16 05:08:38,668 [Thread-1] INFO  com.submit.SubmitService - Active Connection:: -69076
-
-2012-12-16 05:08:38,670 [Thread-1] ERROR  com.submit.SubmitService - Active Connection:: -65764
-
-2012-12-16 05:08:38,670 [Thread-1] ERROR  com.submit.SubmitService - ed Connection:: -65764
