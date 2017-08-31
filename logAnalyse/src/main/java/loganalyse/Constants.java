@@ -1,4 +1,4 @@
-package logAnalyse;
+package loganalyse;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,9 +10,9 @@ public class Constants {
 	static String logBasename;
 	static String logErrorIndicator;
 	static String logAnalyseTime;
-	static String emailAccount;
-	static String emailPassword;
-	static String emailRecipients;
+	public static String emailAccount;
+	public static String emailPassword;
+	public static String emailRecipients;
 
 	static {
 		Properties prop = new Properties();

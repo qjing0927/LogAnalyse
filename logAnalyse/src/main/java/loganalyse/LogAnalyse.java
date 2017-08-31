@@ -1,4 +1,4 @@
-package logAnalyse;
+package loganalyse;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,7 +6,18 @@ import java.io.FileInputStream;
 import java.io.FilenameFilter;
 import java.io.InputStreamReader;
 
+import javax.inject.Inject;
+
+import loganalyse.email.api.EmailService;
+
 public class LogAnalyse {
+
+	private EmailService service;
+
+	@Inject
+	public LogAnalyse(EmailService ser) {
+		this.service = ser;
+	}
 
 	public void ReadLog() {
 
@@ -43,7 +54,7 @@ public class LogAnalyse {
 				}
 			}
 			if (errorExist) {
-				SendMail.sendSSL(emailContent.toString());
+				service.sendEmail(emailContent.toString());
 			}
 		}
 

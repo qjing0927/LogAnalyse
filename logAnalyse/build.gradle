@@ -28,5 +28,6 @@ dependencies {
     
     // https://mvnrepository.com/artifact/javax.mail/mail
 	compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+	compile group: 'com.google.inject', name: 'guice', version: '3.0'
 }
 

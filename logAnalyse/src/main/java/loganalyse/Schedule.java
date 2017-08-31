@@ -1,9 +1,16 @@
-package logAnalyse;
+package loganalyse;
 
 import java.util.Calendar;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+import com.google.inject.AbstractModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
+import loganalyse.email.api.EmailService;
+import loganalyse.email.implementation.GmailService;
 
 public class Schedule implements Runnable {
 	private final ScheduledExecutorService service;
@@ -69,7 +76,14 @@ public class Schedule implements Runnable {
 			@Override
 			public void run() {
 				System.out.println("Log Analyse start ...");
-				LogAnalyse la = new LogAnalyse();
+
+				Injector injector = Guice.createInjector(new AbstractModule() {
+					protected void configure() {
+						bind(EmailService.class).to(GmailService.class);
+					}
+				});
+
+				LogAnalyse la = injector.getInstance(LogAnalyse.class);
 				la.ReadLog();
 			}
 

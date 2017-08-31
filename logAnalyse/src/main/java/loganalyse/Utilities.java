@@ -1,4 +1,4 @@
-package logAnalyse;
+package loganalyse;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
