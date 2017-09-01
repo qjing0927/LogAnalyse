@@ -12,7 +12,7 @@ import com.google.inject.Injector;
 import loganalyse.email.api.EmailService;
 import loganalyse.email.implementation.GmailService;
 
-public class Schedule implements Runnable {
+public class Scheduler implements Runnable {
 	private final ScheduledExecutorService service;
 
 	private final Runnable task;
@@ -21,7 +21,7 @@ public class Schedule implements Runnable {
 	private int sec;
 	private boolean AM = true;
 
-	public Schedule(final ScheduledExecutorService service, final Runnable task) {
+	public Scheduler(final ScheduledExecutorService service, final Runnable task) {
 		this.service = service;
 		this.task = task;
 		setScheduleTime();
@@ -89,7 +89,7 @@ public class Schedule implements Runnable {
 
 		};
 
-		Schedule daily = new Schedule(service, task);
+		Scheduler daily = new Scheduler(service, task);
 		daily.reSchedule();
 	}
 }
